@@ -1,0 +1,142 @@
+<!--{{ str }}
+
+<br>
+{% for restaurant in restaurant_list %}
+  {% for detail in restaurant %}
+    {{ detail }}
+    <br>
+  {% endfor %}
+  <br>
+  <br>
+{% endfor %}-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+		<title>We@t</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="{% static 'css/fonts/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+
+		<div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="index.html" class="branding">
+						<img src="{% static 'images/rsz_2logo.png' %}" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">We@t</h1>
+							<small class="site-description">Make better food choices</small>
+						</div>
+					</a>
+
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="{% url 'index' %}">Home</a></li>
+							<li class="menu-item current-menu-item"><a href="{% url 'search' %}">Search</a></li>
+							<!--<li class="menu-item"><a href="live-cameras.html">Live cameras</a></li>
+							<li class="menu-item"><a href="photos.html">Photos</a></li>
+							<li class="menu-item"><a href="contact.html">Contact</a></li>-->
+						</ul>
+					</div>
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+			<div class="hero" data-bg-image="">
+				<div class="container">
+					<form action="{% url 'search' %}" class="find-location" method="get">
+						<input name="q" type="text" placeholder="Find your location...">
+						<input type="submit" value="Find">
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">{{ weekday }}</div>
+								<div class="date">{{ month }}</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{ city }}</div>
+								<div class="degree">
+									<div class="num">{{ temp }}<sup>o</sup>F</div>
+									<div class="forecast-icon">
+										<img src="" alt="" width=90>
+									</div>
+								</div>
+								<span><img src="" alt="">20%</span>
+								<span><img src="" alt="">18km/h</span>
+								<span><img src="" alt="">West</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="main-content">
+				<div class="fullwidth-block">
+					<div class="container">
+						<h2 class="section-title">Restaurant</h2>
+						<div class="row">
+            {% for restaurant in restaurant_list %}
+							<div class="col-md-3 col-sm-6">
+								<div class="live-camera">
+									<figure class="live-camera-cover"><a href="{{ restaurant.1 }}" target="_blank"><img src="{{ restaurant.4}}" alt=""></a></figure>
+									<h3 class="location"><a href="{{ restaurant.1 }}" target="_blank">{{ restaurant.0 }}</a></h3>
+									<small class="date">Price: {{ restaurant.2 }}</small>
+                  <br>
+                  <small class="date">Rating: {{ restaurant.3 }}</small>
+								</div>
+							</div>
+              {% endfor %}
+						</div>
+					</div>
+				</div>
+
+			</main>
+
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<div class="social-links">
+								<!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+								<a href="https://twitter.com/Van_wears_vans"><i class="fa fa-twitter"></i></a>
+								<a href="mailto:673@holbertonschool.com"><i class="fa fa-google-plus"></i></a>
+								<!--<a href="#"><i class="fa fa-pinterest"></i></a>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+		<!--<script src="{% static 'js/plugins.js' %}"></script>-->
+		<script src="{% static 'js/app.js' %}"></script>
+
+	</body>
+
+</html>
