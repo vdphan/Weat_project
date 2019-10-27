@@ -7,3 +7,4 @@ myenv/
 .git/
 *~
 .env
+**/migrations/
