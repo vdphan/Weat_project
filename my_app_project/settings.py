@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 #DEBUG = True
 DEBUG = False
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://weat-app.herokuapp.com/']
-
+#DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # Application definition
 
@@ -135,4 +135,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
