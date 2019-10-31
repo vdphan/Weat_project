@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 sched = BlockingScheduler()
-@sched.scheduled_job('interval', minutes=1)
-#@sched.scheduled_job('cron', day_of_week='mon-sun', hour=8)
+#@sched.scheduled_job('interval', minutes=1)
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour=8)
 def send_email():
     port = 465
     smtp_server = "smtp.gmail.com"
