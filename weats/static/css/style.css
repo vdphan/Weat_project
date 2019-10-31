@@ -1383,7 +1383,7 @@ form textarea {
     .live-camera .live-camera-cover img {
       display: block;
       width: 100%;
-      height: 450px;
+      height: 350px;
       max-width: 100%;
       border-radius: 5px; }
   .live-camera .location {

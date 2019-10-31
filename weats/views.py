@@ -6,12 +6,27 @@ import requests
 import random
 import os
 from dotenv import load_dotenv
+from .forms import PostForm
+from django.http import HttpResponse
+
 
 load_dotenv()
 
 def index(request):
     """render main page"""
     return render(request, 'weats_template/main_page.html')
+
+def register(request):
+    """render register page"""
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+        return HttpResponse("Register success")
+    else:
+        form = PostForm()
+    return render(request, 'weats_template/register.html', {'form': form})
 
 def search(request):
     """render restaurant database"""
@@ -26,9 +41,10 @@ def search(request):
         params = {'appid': api_key, 'q': city, 'units': 'imperial'}
         r = requests.get(url, params=params)
         temp = r.json().get('main').get('temp')
+        wind = r.json().get('wind').get('speed')
         str = "The weather today in {} is {}".format(city, temp)
         restaurant_list = random.sample(analyze(temp, city), k=8)
-        return render(request, 'weats_template/search.html', {'str': str, 'temp': temp, 'restaurant_list': restaurant_list, 'city': city, "weekday": weekday, "month": month})
+        return render(request, 'weats_template/search.html', {'str': str, 'temp': temp, 'wind': wind, 'restaurant_list': restaurant_list, 'city': city, "weekday": weekday, "month": month})
     else:
         return render(request, 'weats_template/main_page.html')
 
