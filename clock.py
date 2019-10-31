@@ -15,8 +15,9 @@ def send_email():
     receiver_email = "vuphan1996@gmail.com"
     password = os.getenv("PASS_EMAIL")
     message = """\
-        Subject: Hi there
+        Subject: Hi Mr.,
 
+        This is your list of recommended restaurant today
         This message is sent from Python."""
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
