@@ -1,4 +1,6 @@
 import django
+django.setup()
+
 import os
 import smtplib, ssl
 from apscheduler.schedulers.blocking import BlockingScheduler
@@ -8,7 +10,7 @@ from dotenv import load_dotenv
 from weats.models import UserInfo
 
 
-django.setup()
+#django.setup()
 load_dotenv()
 
 sched = BlockingScheduler()
