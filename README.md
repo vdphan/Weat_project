@@ -9,6 +9,7 @@
 ### Technology
 - Language: Python (3.7.4).
 - The web-app is built on Django framework and using PostgreSQL for database.
+![Alt text](./static/images/Technology.png)
 
 ### APIs
 - [Openweatherapi](https://openweathermap.org/)
