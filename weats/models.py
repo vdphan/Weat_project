@@ -8,4 +8,4 @@ class UserInfo(models.Model):
     location = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name, self.email, self.location
+        return '{} {} {}'.format(self.name, self.email, self.location)
