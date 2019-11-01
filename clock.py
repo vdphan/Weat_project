@@ -10,6 +10,7 @@ from weats.models import UserInfo
 
 django.setup()
 load_dotenv()
+
 sched = BlockingScheduler()
 @sched.scheduled_job('interval', minutes=1)
 #@sched.scheduled_job('cron', day_of_week='mon-sun', hour=8)
