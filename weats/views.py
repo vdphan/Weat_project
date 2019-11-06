@@ -12,6 +12,10 @@ from django.http import HttpResponse
 
 load_dotenv()
 
+def about(request):
+    """render landing page"""
+    return render(request, 'weats_template/about.html')
+
 def index(request):
     """render main page"""
     return render(request, 'weats_template/main_page.html')
