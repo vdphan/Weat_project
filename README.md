@@ -18,7 +18,10 @@
 ---
 ## Illustration
 - Main Page
+![Alt text](./static/images/main_page.png)
+&nbsp;
 - Result Page
+![Alt text](./static/images/search_page.png)
 
 ## Technology
 - Language: Python (3.7.4).
