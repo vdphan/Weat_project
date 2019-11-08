@@ -8,3 +8,4 @@ myenv/
 *~
 .env
 **/migrations/
+.DS_Store
