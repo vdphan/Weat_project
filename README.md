@@ -3,22 +3,34 @@
 
 # Table of Contents
 - [Description](#Description)
+- [Illustration](#Illustration)
+- [Technology](#Technology)
+- [APIs](#APIs)
+- [Setup](#Setup)
+- [Deployment](#Deployment)
+- [Author](#Author)
 
 ## Description
 - This project was created to build an web app that recommend restaurant based on the weather condition.
-- Link:
-  + [https://weat-app.herokuapp.com/](https://weat-app.herokuapp.com/)
+- Read this article for more information: [A journey to my first web-app using Django](https://medium.com/@673/a-journey-to-my-first-web-app-using-django-ac6154b3a5)
+
+
 ---
-### Technology
+## Illustration
+- Main Page
+- Result Page
+
+## Technology
 - Language: Python (3.7.4).
 - The web-app is built on Django framework and using PostgreSQL for database.
 ![Alt text](./static/images/Technology.png)
 
-### APIs
+
+## APIs
 - [Openweatherapi](https://openweathermap.org/)
 - [Yelp Fusion](https://www.yelp.com/fusion)
 
-### Setup
+## Setup
 - After you git clone the repository, you need to run this command to dowload all libraries in requirements.txt:
   + ```pip install -r requirements.txt```
 - Next, you create a ```.env``` file to store all environment variable that you need, included:
@@ -30,9 +42,11 @@
   + WEATHER_API
   + YELP_API
 
-### Status
-- The web-app is deployed on Heroku.
-
+## Deployment
+- Web-app Link:
+  + [https://weat-app.herokuapp.com/](https://weat-app.herokuapp.com/)
+- Landing page:
+  + [Here](https://weat-app.herokuapp.com/about)
 
 ---
 
