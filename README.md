@@ -1,6 +1,9 @@
 # Weat_project
 ![Alt text](./static/images/pinterest_board_photo.png)
 
+# Table of Contents
+- [Description](#Description)
+
 ## Description
 - This project was created to build an web app that recommend restaurant based on the weather condition.
 - Link:
