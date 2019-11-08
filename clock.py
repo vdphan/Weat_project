@@ -1,3 +1,4 @@
+"""A script that send scheduled email to users"""
 import django
 django.setup()
 
@@ -10,13 +11,14 @@ from dotenv import load_dotenv
 from weats.models import UserInfo
 
 
-#django.setup()
 load_dotenv()
 
 sched = BlockingScheduler()
-#@sched.scheduled_job('interval', minutes=1)
+#@sched.scheduled_job('interval', minutes=1) run scheduled job every minutes
+# run scheduled job every day at 8 am
 @sched.scheduled_job('cron', day_of_week='mon-sun', hour=8)
 def send_email():
+    """retrieve email from database and send text to user's email"""
     data = UserInfo.objects.all()
 
     sf_list = []

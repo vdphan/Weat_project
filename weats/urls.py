@@ -1,3 +1,4 @@
+"""A script that define the path for Django web-app"""
 from django.urls import path
 from . import views
 

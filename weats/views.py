@@ -1,3 +1,4 @@
+"""A script that render requests to html file"""
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime

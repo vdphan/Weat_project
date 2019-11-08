@@ -1,3 +1,4 @@
+"""A scripts creates table UserInfo and fields inside the table"""
 from django.db import models
 
 class UserInfo(models.Model):
