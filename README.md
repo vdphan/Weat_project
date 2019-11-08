@@ -9,6 +9,7 @@
 - [Setup](#Setup)
 - [Deployment](#Deployment)
 - [Author](#Author)
+- [Licensing](#Licensing)
 
 ## Description
 - This project was created to build an web app that recommend restaurant based on the weather condition.
@@ -55,3 +56,6 @@
 
 ## Author
 * **Van Phan** - [vdphan](https://github.com/vdphan)
+
+## Licensing
+This project is licensed under the MIT License - see the LICENSE file for details.
